@@ -1,0 +1,109 @@
+{
+  "spec_version": "1.0.0",
+  "adapter_contract_version": "v1",
+  "generated_at": "2026-10-17T05:57:44Z",
+  "slug": "expense-claim-flow",
+  "family": "business_ops",
+  "tier": 2,
+  "flagship": false,
+  "adapter_contract": "ExpenseClaimAdapterV1",
+  "ai_usage": "conditionally-AI (receipt OCR assist degrades to manual entry)",
+  "direction_default": "bilingual-en (proposed, LOOP-6 pending confirmation)",
+  "roster_status": "researched proposal, pending owner confirmation",
+  "shared_foundation": [
+    "token-architecture.md",
+    "ux-patterns.md",
+    "rtl-rules.md",
+    "a11y-baseline.md",
+    "ai-native-patterns.md",
+    "async-contract.md",
+    "credential-contract.md",
+    "design-language-map.md",
+    "motion-language.md",
+    "copy-voice.md"
+  ],
+  "files": [
+    {
+      "path": "00-brief.md",
+      "sha256": "a07153bbe220fb8184fd04af244a85171fdd90d0c7af7e93750766aa7c8c2b85",
+      "bytes": 10238
+    },
+    {
+      "path": "01-market-research.md",
+      "sha256": "1733ca511ec955e22db309971e5e1e0443105525e980b8d26abef20b8b5c8fb7",
+      "bytes": 15077
+    },
+    {
+      "path": "02-user-research.md",
+      "sha256": "ddc251be36f4d19b391195f8e834ce1c6dbc76f3c9bcb476564e6080085d4987",
+      "bytes": 9102
+    },
+    {
+      "path": "03-ux-flows.md",
+      "sha256": "61d9562dae77aea178bf7a74fb9402a968b2778abd0f9d3146a02589f30ce312",
+      "bytes": 21020
+    },
+    {
+      "path": "04-information-arch.md",
+      "sha256": "60db5eedd4fed652b0e32eb326a5614cf1b32ca3fb6764c6bb8315e4816e9509",
+      "bytes": 5909
+    },
+    {
+      "path": "05-identity.md",
+      "sha256": "34ef5bc3e5b84f8b9621593905ffca3039f85974c3a84c838f9088e33c573b0c",
+      "bytes": 20147
+    },
+    {
+      "path": "06-component-needs.md",
+      "sha256": "3ae598e4e96d834c1246e8020fe4229e37ff84f16def4ee6b3ba3ba513f3d743",
+      "bytes": 9528
+    },
+    {
+      "path": "07a-data-contract.md",
+      "sha256": "741816b69590297909dde40915c7b4a2e8f81413e3beff7a275b800a3db10eed",
+      "bytes": 18933
+    },
+    {
+      "path": "07b-adapter-contract.md",
+      "sha256": "be206dac6ca74eff236932bf83c2c9c143ff7af4ce5a640009dfe6356367ae0f",
+      "bytes": 22798
+    },
+    {
+      "path": "07c-mock-adapter.md",
+      "sha256": "d22c7d164605c932fd9875612264411dfea1881ee4200df9e560076886641eca",
+      "bytes": 19945
+    },
+    {
+      "path": "08-integration-map.md",
+      "sha256": "97305bf23b9afe466b6ecf1d63e46d8a16c2d45309915233e48d6c857cf49c3d",
+      "bytes": 7316
+    },
+    {
+      "path": "09-accessibility.md",
+      "sha256": "411ee7a58d5dcf9dcecb1ffddd9a4f9032ae05b13422523d88170ed67d2a2efb",
+      "bytes": 10289
+    },
+    {
+      "path": "10-performance.md",
+      "sha256": "780bbb475711ef10607aa6d5ff832fab81691a61e51619a8572d22319d4dee62",
+      "bytes": 4934
+    },
+    {
+      "path": "11-empty-loading-error.md",
+      "sha256": "afd33e387744b5daaa32e50f6e124fd4a986ddafa7480e421db8b097c45a75b7",
+      "bytes": 24937
+    },
+    {
+      "path": "12-open-questions.md",
+      "sha256": "42f1dc1320dc6e22cc36cd37fd44dd423f1c6facb2ef6b43398234a4aeb1c543",
+      "bytes": 8658
+    },
+    {
+      "path": "13-reference-mockups.md",
+      "sha256": "ddff40c073ca42f078b5d1d927f23d3592d07c2bbd649a8d53b2881534f3caa3",
+      "bytes": 5551
+    }
+  ],
+  "file_count": 16,
+  "manifest_note": "manifest.json is excluded from its own hash list (self-reference); all other files hashed with SHA-256."
+}
