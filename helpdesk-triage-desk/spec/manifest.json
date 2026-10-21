@@ -1,0 +1,109 @@
+{
+  "spec_version": "1.0.0",
+  "adapter_contract_version": "v1",
+  "generated_at": "2026-10-17T06:59:31Z",
+  "slug": "helpdesk-triage-desk",
+  "family": "business_ops",
+  "tier": 2,
+  "flagship": false,
+  "adapter_contract": "HelpdeskTriageAdapterV1",
+  "ai_usage": "conditionally-AI (bilingual intent clustering degrades to keyword rules)",
+  "direction_default": "bilingual-en (proposed, LOOP-6 pending confirmation)",
+  "roster_status": "researched proposal, pending owner confirmation",
+  "shared_foundation": [
+    "token-architecture.md",
+    "ux-patterns.md",
+    "rtl-rules.md",
+    "a11y-baseline.md",
+    "ai-native-patterns.md",
+    "async-contract.md",
+    "credential-contract.md",
+    "design-language-map.md",
+    "motion-language.md",
+    "copy-voice.md"
+  ],
+  "files": [
+    {
+      "path": "00-brief.md",
+      "sha256": "f971f6c0c66f9b9af5b8e65d5114213eaa0e6fa1db625bea9987bf1a28a2a4e2",
+      "bytes": 11695
+    },
+    {
+      "path": "01-market-research.md",
+      "sha256": "ad07c3e4436cd53f7867714eff314b16df1fe57de26ec3211e4326e83add0464",
+      "bytes": 14874
+    },
+    {
+      "path": "02-user-research.md",
+      "sha256": "c2f757d2553c5d166a8b151928cc713279d17bae93861293bf9c507e64443a89",
+      "bytes": 8632
+    },
+    {
+      "path": "03-ux-flows.md",
+      "sha256": "355a46f83081bedd51fac3c767b079fd2997678d169013bbf50b12930a51ae55",
+      "bytes": 22061
+    },
+    {
+      "path": "04-information-arch.md",
+      "sha256": "2635a5268aad0771b5302540f1c6b8d8b645bbfb6971402cfc11eb4f8bb70b71",
+      "bytes": 5970
+    },
+    {
+      "path": "05-identity.md",
+      "sha256": "842808fb7cc4cafb75c7d829c1941193f4a910ffe33d13c8c381f431e11b2a97",
+      "bytes": 24418
+    },
+    {
+      "path": "06-component-needs.md",
+      "sha256": "2d6657d1eda1e549ac5d8d2965b324812ca20e2876a4175fda21af4820366c9f",
+      "bytes": 6887
+    },
+    {
+      "path": "07a-data-contract.md",
+      "sha256": "43d4cd6fc1f02fdd95923b4398cb70329abe28e32b3edeac6381fcca26b8bcc7",
+      "bytes": 18368
+    },
+    {
+      "path": "07b-adapter-contract.md",
+      "sha256": "82a693c82593200824a6d1d078b066ac5eb62a75332a0e4513d8936c56f61e63",
+      "bytes": 22054
+    },
+    {
+      "path": "07c-mock-adapter.md",
+      "sha256": "0a1e42266dc040af554febb0ea1069a1cc4b53c788d6d878d4fa5b578861ce51",
+      "bytes": 19752
+    },
+    {
+      "path": "08-integration-map.md",
+      "sha256": "f17ed638da4602ac4c38aeb7d6f1892e9fa93cf7a0b1fa6fd72712479eb3b974",
+      "bytes": 7120
+    },
+    {
+      "path": "09-accessibility.md",
+      "sha256": "b295c27bf54ea0ca3dca6b13cf9b428ddec3e405bc698e6f790d28b4e48a14f3",
+      "bytes": 9785
+    },
+    {
+      "path": "10-performance.md",
+      "sha256": "ca225e778d5160c2b7575d8c65a717f9a50da4eebe220ca21bb8ba80295dad7d",
+      "bytes": 4757
+    },
+    {
+      "path": "11-empty-loading-error.md",
+      "sha256": "508bcfe12a666e725b2722bb4c51f25c99128bb67522b474e9b100ef69582761",
+      "bytes": 23114
+    },
+    {
+      "path": "12-open-questions.md",
+      "sha256": "d45c8d4cc7ec8e3831d3af9c7fe40de78155d52c598eac59d95e8be8348ede34",
+      "bytes": 10870
+    },
+    {
+      "path": "13-reference-mockups.md",
+      "sha256": "bd7f5736f5ea36e1cea7a45223ba2a103e41fb273a19f7a19635766d66467466",
+      "bytes": 6100
+    }
+  ],
+  "file_count": 16,
+  "manifest_note": "manifest.json is excluded from its own hash list (self-reference); all other files hashed with SHA-256."
+}

@@ -1,0 +1,22 @@
+# 13 — Reference Mockups: halal-certification-tracker
+
+Tier 3 obligations: ≥2 curated references (met: 3). Real-world names allowed in this file per hard rule 1 (market citations only; implementation surfaces stay generic).
+
+## Curated references
+
+1. **Certifable — halal certification-body software** — https://certifable.com/certification-software/halal
+   Take: the portal shape a CB buyer already recognizes — applications, evidence, decisions, certificates, renewals as one white-labeled flow (01 direct table); the case-first navigation that makes intake season navigable. Not taken: renewals-as-dates (our ladders are computed rungs with states, not deadline columns); the attachment-posture on formulations (our ingredient graph is the spine, not a filed PDF); no evidenced bilingual ar/en construction to borrow.
+
+2. **Sectigo Certificate Manager (SSL/TLS CLM class)** — https://www.sectigo.com/enterprise-solutions/certificate-manager and the CLM category shape — https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+   Take: the fleet-renewal grammar — expiry-driven urgency across thousands of certificates, renewal automation, revocation as a first-class act; the discipline that "the register answers before the incident does." Not taken: the domain (no keys, no TLS, no crypto chrome); the auto-issuance posture (our issuance is a committee act behind a typed gate — automation of the decision is exactly what an accredited body cannot buy); zero bilingual content.
+
+3. **Larksuite "Halal Certification Tracker for Compliance Officers" template** — https://www.larksuite.com/en_us/templates/halal-certification-tracker-for-compliance-officers
+   Take: the honest incumbent — column grammar (status, application date, expiry date, officer, notes) that proves the mental model every buyer already has; our S1 register deliberately reads as that sheet's grown-up form so migration feels like promotion, not re-education. Not taken: everything the sheet cannot do — computed ladders, impact walks, formulation links, bilingual search normalization, the activity log.
+
+## Original direction (prose sketch — identity-driven, T3-appropriate)
+
+The Itqan Register: a ledger of record in deep forest ink on cool paper, serif-set in both scripts, layered like a filing system rather than drawn like a dashboard. The register grid reads as ruled entries — certificate numbers in tabular figures, applicant names in their own directions, the urgency zone as a quiet chip at the inline-end — and above it, the **renewal console** renders each certificate's ladder literally: a vertical rail of rungs descending toward the expiry line, Arabic labels right-reading and English left-reading in one composed timeline, cleared rungs carrying the leaf-check, missed rungs breaking the rail with a crimson tick and their date in text. The signature surface is the **impact answer**: from any ingredient or supplier certificate, the graph walk draws a three-node chain (مكوّن → تركيبة → شهادة) that settles open across the dossier, each affected certificate landing as a stacked document card in days-to-expiry order — layered depth doing semantic work, the nearest expiry literally sitting on top. The **issuance gate** refuses in plain arithmetic: a typed refusal that lists its unresolved lines like a returned file with a clerk's note, and when the gate passes, the certificate document settles once onto the stack — no confetti, no fanfare, one 360ms settle and a state chip, because a register records, it does not celebrate. Motion is stately throughout: staggered reveals capped at five, emphasized decelerate, and the only thing that ever travels is the rung marker climbing down its ladder as work completes. Accessibility implications carried into 09: the rung settle's information lives in its simultaneous text change; the impact chain is a semantic list before it is a drawing; the dossier's read-then-rule focus order is direction-invariant by contract.
+
+## Mood anchors
+
+Deep forest ink on cool paper · a ladder rendered as architecture, its rungs descending toward a dated line · the impact answer as a chain of documents settling by urgency · a typed refusal that reads like a clerk's honest note · the seal glyph thin enough to sit inside a sentence · bilingual entries meeting at a ruled center, each script reading its own way · stately motion that treats every state change as a record being made.
