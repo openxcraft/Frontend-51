@@ -1,0 +1,33 @@
+# 06 — Component Needs: meeting-notes-action-desk
+
+## Shared primitives consumed
+
+Button, Menu, Dialog, Tabs (meeting tabs + workspace sections), Tooltip, Toast, Skeleton, EmptyState, FilterChips (P08 — owner/status/zone/meeting filters), JobRow, QuotaMeter (assist-run window, P14), ActionBar (bulk send-for-confirmation, P07), CommandPalette (P05, bilingual normalized search), AutosaveIndicator (P10 — composer drafts), DiffView (capture-revision compare).
+
+## Invented components (8)
+
+| Component | Purpose | Obligations |
+|---|---|---|
+| **NotesIngestPanel** | the capture surface: type-notes editor (always-available floor), paste/import field, optional transcribe-audio path with consent surface | Typed path needs zero capabilities (LOOP-5 floor); paste validation names the first bad row; the transcribe path renders optional with capability-language consent (credential-contract §2), never as the front door; mixed-script input gets `dir="auto"` + isolate marks (rtl-rules §2); autosave draft state persistent (P10); upload progress is a determinate Job row, not a blocking spinner |
+| **CaptureStream** | read view of a notes/transcript revision: speaker chips, timestamps, per-segment direction (ar/en/mixed), evidence-highlight spans where proposals/decisions/actions are bound | Each segment renders at its own direction with bidi isolation; code-switched segments never force ambient direction; evidence spans are focusable links with the target artifact named ("التكليف A-001") — the span is a visible, keyboard-reachable anchor, never color-only; row-count context on region entry; >200 segments virtualize with focus preservation (P19) |
+| **SummaryPanel** | the mode-labeled summary: bilingual paragraphs, provenance chip (assist/deterministic/manual), proposals review (accept/edit/dismiss per proposal), regenerate | Streaming disclosure per ai-native-patterns §2 — reserved region, start/completion announced, stop/regenerate always available, partial marked; every proposal carries confidence label with the fixed low-confidence mark (<0.70) as text, evidence-span link, and accept/override actions (P15 draft-by-default); provenance chip is icon+text; deterministic mode renders NO meter (the floor must not read as rationed — 06 QuotaMeter rule) |
+| **ActionComposer** | authoring surface: bilingual text pair (side-by-side, per-side direction), single-owner picker (refuses a second owner), due date (Gregorian storage, dual-calendar display P24), respond-by override, evidence-span link | Pair sides render per-side direction with length-far-apart/unpaired warning (P23 sibling logic scoped to pairs); empty side is an honest slot, never auto-filled; single-owner enforcement is visible copy + picker behavior, not an after-submit error; due-date-before-respond-by warning; labels persist above fields (a11y-baseline §5); keyboard-complete (P06 inline edit + escape); draft autosave (P10) |
+| **ConfirmationLoopCard** | the signature component: one action's loop state — chip (proposed/questioned/confirmed/declined), respond-by countdown, owner name, respond actions (Confirm / Ask / Decline), the clarification thread | The three responses are visible buttons with verb+object labels (copy-voice §1.5), ≥24px targets (2.5.8); disable-on-submit to prevent double response (ux-guidelines row 33) + idempotency keys (07b); racing responses surface CONFLICT with the recorded response; the thread is a chronological list with timestamps announced politely; the Ta'ahhud Settle (05) renders here — opacity-only, reduced-motion-safe |
+| **LoopDeskDigest** | S1/S6 surface: counts by zone (awaiting-confirmation, confirmation-overdue, overdue, due-soon, done-this-week) with live drill-down rows | Zone counts are text first (charts contract: numbers always present, never heat-only); each row links to its action; confirmation-overdue rows name their values ("requested 8 Oct, respond-by 11 Oct, 10 days unanswered"); digest refreshes politely, never auto-updates under the caret; owner-scoped variant for owner mode |
+| **ActionRegisterTable** | the cross-meeting register: virtualized rows (bilingual action text, owner, meeting, zone chip, status, due date), filters, bulk ops | P18 grid (arrow navigation, range selection); >200 rows virtualize (P19); zone chips are color+glyph+text (readable with color disabled — 05); filtered state declares itself (P08); mixed-script cells bidi-isolated; Western numerals; export-register action anchored to the current filter state and saying so |
+| **MinutesPreview** | bilingual minutes preview + action register appendix preview, export controls, artifact list with expiry | Fixed, inspectable structure (header, participants, summary, decisions, actions with confirmation provenance); both locales' sections render per-side direction; unconfirmed actions export flagged `proposed` (honest, not blocking); capture-revision provenance line; artifact expiry + regeneration per async-contract §2 |
+
+## Layer-3 token additions
+
+`capture.segment.evidence.*` (span anchor states), `summary.provenance.{assist|deterministic|manual}.*`, `proposal.confidence.low.*` (the <0.70 label treatment), `action.pair.unpaired.*` / `action.pair.far-apart.*` (P23-scoped warnings), `loop.chip.{proposed|confirmed|questioned|declined}.*` (UI-ink vs text-bearing variants per 05 contracts — amber text always amber-deep), `loop.respond-by.*` (countdown states incl. confirmation-overdue), `digest.zone.*` (five zone rows), `minutes.section.*` — all Layer 2 re-binds of the 05 palette; no raw values (token-architecture §1).
+
+## Reused-with-twist
+
+- **DiffView**: capture-revision compare (segment-level: added/changed segments between two revisions) — not character diffs.
+- **EmptyState**: S1 first-run offers the seeded sample meeting (interactive: loads the planted overdue + confirmation-overdue fixtures so the loop is experienceable pre-import — P22).
+- **QuotaMeter**: assist-run window only; deterministic cue mode and manual note-taking render NO meter (unlimited by design — the degradation floor must not read as rationed).
+
+## Deviations recorded
+
+- Fully-rounded removable filter chips inside density-B system (P08 semantics) — declared in 05; all other radii in the B family.
+- Icon flip decisions (rtl-rules §2): the loop glyph (two arrows in an open circle) mirrors in RTL (cycle direction follows reading direction); evidence-span link glyph is a quotation frame (symmetric, never flips); send-for-confirmation arrow flips; respond action icons (check/question/x in circles) never flip (semantic anchors); clock glyph never flips (rtl-rules §2 physical-metaphor exemption).
