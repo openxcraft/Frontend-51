@@ -1,0 +1,109 @@
+{
+  "spec_version": "1.0.0",
+  "adapter_contract_version": "v1",
+  "generated_at": "2026-10-17T10:00:03Z",
+  "slug": "clinic-appointment-desk",
+  "family": "specialized",
+  "tier": 3,
+  "flagship": false,
+  "adapter_contract": "ClinicAppointmentAdapterV1",
+  "ai_usage": "declared non-AI — deterministic waitlist and no-show rules",
+  "direction_default": "bilingual-ar (proposed, LOOP-6 pending confirmation)",
+  "roster_status": "researched proposal, pending owner confirmation",
+  "shared_foundation": [
+    "token-architecture.md",
+    "ux-patterns.md",
+    "rtl-rules.md",
+    "a11y-baseline.md",
+    "ai-native-patterns.md",
+    "async-contract.md",
+    "credential-contract.md",
+    "design-language-map.md",
+    "motion-language.md",
+    "copy-voice.md"
+  ],
+  "files": [
+    {
+      "path": "00-brief.md",
+      "sha256": "983784cd5278afd350b7b4704d132eac6bb9d1284d0b40104f6ab04d4953cc2c",
+      "bytes": 8988
+    },
+    {
+      "path": "01-market-research.md",
+      "sha256": "6891617017a835aaed037a1df74cc7f56fcf3feab249480b2670084441db0c34",
+      "bytes": 10781
+    },
+    {
+      "path": "02-user-research.md",
+      "sha256": "976c934e077d07c3e2e0bbb0dba75022ea85337ee35b7ad71a2bca5fe1ae88ae",
+      "bytes": 7821
+    },
+    {
+      "path": "03-ux-flows.md",
+      "sha256": "5e4c7899b3e1d34a1e8b640fde9addfb5581fa07a26f6e0637595a1f81f88e1c",
+      "bytes": 17470
+    },
+    {
+      "path": "04-information-arch.md",
+      "sha256": "524301e97cfdb33f024064a2949e2196c2ca722d460080b07818737249fbe2ed",
+      "bytes": 7485
+    },
+    {
+      "path": "05-identity.md",
+      "sha256": "a278287f4504fb440a8681f505b0ee884b35745eac7b26c4172c3d1d520f13bf",
+      "bytes": 17686
+    },
+    {
+      "path": "06-component-needs.md",
+      "sha256": "3ae7612dcc738af3a8e61dbcf3bfb2591b322fa5031b56d5fb84d5a5e13bac1e",
+      "bytes": 7907
+    },
+    {
+      "path": "07a-data-contract.md",
+      "sha256": "10c41caa6bfdba82c291c8cc69e826d7630aef0b299f315ddd1eaf1027554b3d",
+      "bytes": 13612
+    },
+    {
+      "path": "07b-adapter-contract.md",
+      "sha256": "e1dd4f39dfa02526fab060349922a6aa0971d346d74123287fa74f2a540e07ed",
+      "bytes": 20180
+    },
+    {
+      "path": "07c-mock-adapter.md",
+      "sha256": "47a75b52660fc4635219536599571800476f4ce0017e2efa7850af183424327f",
+      "bytes": 14685
+    },
+    {
+      "path": "08-integration-map.md",
+      "sha256": "c86d7ac0e886c54ae8fad6c8f20d01b6a4bafe92b8239721ad5d31b128f08462",
+      "bytes": 7022
+    },
+    {
+      "path": "09-accessibility.md",
+      "sha256": "cd3c408af7a43583fe97f2ce2c2fa3af0338e230864b732cc0f9ee26ae181563",
+      "bytes": 9910
+    },
+    {
+      "path": "10-performance.md",
+      "sha256": "660cdf184e41effde42b923f662128fb5f2c31140fed08a509a5b49c5a574876",
+      "bytes": 4279
+    },
+    {
+      "path": "11-empty-loading-error.md",
+      "sha256": "f2173c30a1ec45437a7019e072130cf2a8b8b0405fad3d9391314164685c11ef",
+      "bytes": 19832
+    },
+    {
+      "path": "12-open-questions.md",
+      "sha256": "b8417a68c91a41e53a268e78d8c2395944e08a75e1e4e35ffb42ed458481d351",
+      "bytes": 12179
+    },
+    {
+      "path": "13-reference-mockups.md",
+      "sha256": "8693762e937d57adb8ca1d9c4244203a1614226893f98f644e83223a4e16984f",
+      "bytes": 4286
+    }
+  ],
+  "file_count": 16,
+  "manifest_note": "manifest.json is excluded from its own hash list (self-reference); all other files hashed with SHA-256."
+}
