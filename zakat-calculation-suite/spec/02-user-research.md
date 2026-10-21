@@ -1,0 +1,45 @@
+# 02 — User Research: zakat-calculation-suite
+
+SME-B pass · Personas are synthesized from the research corpus's question topology and documented divergence axes (01 evidence; digest [1][2][4][9][14]) — no verbatim user quotes exist in the corpus, so every quote below is **paraphrase-marked** (persona voice, not a sourced utterance). Roles map to the 07a grammar: owner (the shariah/administrative authority), officer, reviewer, viewer.
+
+## Personas
+
+### P-01 — Nadia, Islamic finance officer at a charitable foundation
+
+**Role**: officer seat. **Context**: finance officer at a bilingual (ar/en) charitable foundation that computes zakat for its own treasury and for the families and small businesses it serves — dozens of cases per season, Ramadan as the crunch, entity cases on fiscal calendars the rest of the year (01 [14]). She is Arabic-first, works bilingually, and answers to Sheikh Salman on methodology and to the board's auditors on evidence. **Goals**: enter a case's items once and trust the arithmetic; know which methodology each case ran under and why; hand an auditor a document that answers the derivation question without a meeting; keep last year's locked cases reproducible. **Frustrations**: her spreadsheet's nisab value is a pasted number from some website some time ago; the jewelry question produces a different answer depending on which colleague's formula is loaded; a mid-hawl acquisition is silently included or silently dropped depending on the sheet version; when the auditor asked for a derivation last year she rebuilt the file from memory and was not sure it matched. **Quote (paraphrase)**: "أنا لا أحتاج آلة حاسبة، أحتاج ملفًا يقف أمام المراجع" — I don't need a calculator; I need a file that stands up in front of the reviewer.
+
+### P-02 — Sheikh Salman, shariah advisor and methodology authority
+
+**Role**: owner seat. **Context**: retained shariah advisor to the foundation (and, in the second buyer shape, to an independent finance practice); the person whose signature the methodology positions effectively carry. Reads classical and contemporary fiqh sources in Arabic, reads AAOIFI-era institutional material in English (01 [13]), and treats named sources as non-negotiable grammar — he reviews NZF-style guidance by its mufti attribution and review date (01 [6][7]). **Goals**: see every rule the engine applies, with its source, before it touches a case; approve and version methodology profiles as documents; retire an outdated position without breaking old locked cases; see the madhhab comparison when a contested category (jewelry, debts, agriculture scope) actually moves a number. **Frustrations**: software that hard-codes one madhhab and calls it "zakat calculation"; a tool that asserts a fiqh position with no citation; black-box numbers presented to him for blessing after the fact. **Quote (paraphrase)**: "إن لم يكن للقاعدة مصدر، فهي ليست قاعدة بل رأيًا مجهولًا" — a rule without a source is not a rule; it is an anonymous opinion.
+
+### P-03 — Huda, senior finance officer and reviewer
+
+**Role**: reviewer seat (officer history). **Context**: the foundation's senior finance officer; reviews submitted cases, locks them, and is also the first real individual-case user — her own family's zakat (cash, silver, a gold jewelry item, a renovation loan) is the seeded comparison case (07c Z-1038), which she uses to teach the methodology question to new colleagues. Bilingual, Arabic-first, careful about liability deduction because the family loan's treatment changes her number (01 [6][10]). **Goals**: review a case's evidence, not a summary of it; see the trace line by line before locking; spawn a successor case cleanly when a post-lock adjustment appears; compare Hanafi versus Shafi'i on her own file and read exactly which rule pair moved the number. **Frustrations**: review tools that show her a total and no derivation; correction flows that rewrite history (she needs the chain, not the edit); comparison views that show a delta without naming the rule behind it. **Quote (paraphrase)**: "الفرق بين المذهبين ليس رقمًا، بل قاعدتين — أريدهما معًا" — the difference between the two schools is not a number; it is two rules — show me both.
+
+### P-04 — Ibrahim, external auditor (with Fatima, audit colleague)
+
+**Role**: viewer seats (Ibrahim + Fatima). **Context**: external auditor at a bilingual audit practice serving Islamic nonprofits; receives locked cases' audit bundles once a year and asks the derivation question for a living. Reads Arabic and English; needs the artifact to carry its own methodology name, version, pinned reference values, and numeral policy (01 [13][14]). **Goals**: retrieve the audit bundle for a locked case without a seat that can mutate anything; re-derive one or two figures by hand from the trace and get the same minor units; see the pinned nisab references and their source notes; know what changed across the successor chain when a correction was made. **Frustrations**: exports that summarize without deriving; spreadsheets with no provenance for the nisab value; artifacts whose numbers cannot be reproduced because the inputs were never frozen. **Quote (paraphrase)**: "أنا لا أدقق الرقم، بل الطريق إليه" — I do not audit the number; I audit the road to it.
+
+## Jobs-to-be-done
+
+| # | When… | I want to… | So that… | Covered by |
+|---|---|---|---|---|
+| J-1 | a new zakat season opens and files arrive | create a case with its period, currency, and approved methodology and enter items from the evidence sheets | the file is computable without re-deriving the methodology each time | CP-1 |
+| J-2 | the case's items are in | run the calculation and read the basket, the nisab gate, and the derivation trace | I can defend every figure line by line | CP-1 |
+| J-3 | a contested category (jewelry, debts, agriculture) is in the file | compare two to five approved profiles on the same items | the methodology choice is a documented decision, not an assumption | CP-2 |
+| J-4 | the nisab value is needed | enter today's reference values with source notes and pin them to the case | the threshold arithmetic is provenance-bearing and frozen for history | CP-3 |
+| J-5 | a case is ready | submit it, see it reviewed, and lock it | the certified number is frozen evidence | CP-4 |
+| J-6 | the auditor asks | export the bilingual audit bundle with the trace and retrieve the artifact | the derivation question is answered by a document | CP-4 |
+| J-7 | a post-lock error surfaces | spawn a successor case linked to the locked one | history stays honest and the correction is its own auditable event | CP-4 |
+| J-8 | methodology policy changes | edit the profile, re-version it, get it re-approved | old locked cases stay computable as-was and new cases use the new rules | CP-5 |
+| J-9 | I administer the desk | filter the case register, watch jobs, read the activity log | the workspace's accountability surface is one place | CP-5 |
+
+## Objections and responses
+
+- **"We already have a calculator."** Response: the calculator answers one payer's one question once (01 [5][10]); this product manages many files with chosen methodology, review, certification, and export — the calculator is a donate button, not a practice. The seeded sample case makes the difference experienceable in one session (P22).
+- **"Our shariah board decides methodology, not software."** Response: correct, and that is the design — the engine applies only recorded, sourced rules; the owner seat approves them; the comparison shows the board the rule pairs behind a delta (07b rule 2/4). The product never adjudicates; it documents.
+- **"Spreadsheets are free."** Response: the spreadsheet is free the way an unlit room is free — its methodology is invisible, its nisab value is unprovenanced, its corrections rewrite history, and its audit answer is a rebuild (01 indirect [1]). The free tier keeps calculations unmetered forever (12 Q-3).
+- **"Which madhhab is the right one?"** Response: the product refuses to answer — every profile carries its school name, its sources, and the authority's approval; the comparison exists precisely because the field's own scholarship documents the divergences (01 [1][4]). The tool's honesty is showing the rule pair, not picking a side.
+- **"Will it stay reproducible in five years?"** Response: that is the data contract's core invariant — results pin case version, profile version, and nisab references; locked cases re-export identically from frozen state (07a state obligations; 07c determinism fixtures).
+- **"Can it file our zakat return for us?"** Response: no — no submission channels, no payment rails (LOOP-10); the audit bundle is shaped to stand in front of the authority's desk (01 [14]), and filing stays where the regime put it.
+- **"Arabic numerals in amounts will confuse our auditors."** Response: numeral policy is workspace-set per the ledger row — Arabic-Indic in Arabic prose contexts, Western in tables and amounts, storage canonical (rtl-rules §3); the artifact declares its policy on its face (CP-4 edge).

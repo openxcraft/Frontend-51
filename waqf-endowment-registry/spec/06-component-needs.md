@@ -1,0 +1,36 @@
+# 06 — Component Needs: waqf-endowment-registry
+
+## Shared primitives consumed
+
+Button, Menu, Dialog, Tabs (endowment tabs + workspace tabs), Tooltip, Toast, Skeleton, EmptyState, FilterChips (P08 — status/kind/period filters with removable chips), JobRow, ActionBar (bulk ledger ops, P07), CommandPalette (P05), AutosaveIndicator (P10 — policy editor, deed metadata), DiffView (report variance compare), QuotaMeter (export/import windows, P14), OfflineBanner (P20).
+
+## Invented components (9)
+
+| Component | Purpose | Obligations |
+|---|---|---|
+| **EndowmentRegisterGrid** | S1 registry: endowment cards/rows with bilingual title (per-side direction), kind chip, status chip, counts, unallocated balance, latest-report state | Virtualized >200 rows (P19) with focus preservation; row-count context on region entry; bilingual search input normalizes (rtl-rules §4); status and kind are icon+text+color, never color alone; targets ≥24×24 (2.5.8); 400% reflow — grid collapses to stacked cards at 360px |
+| **DeedPanel** | S2 bilingual deed summary: title, donor, purpose, deed ref with dual-calendar dates (P24 — Umm al-Qura disclosed), policy chips (cap/reserve/remainder/period) | Dual-calendar hover cross-reference; bilingual fields authored both sides with per-side direction (P23 logic); the activation gate's missing-side marks render inline (named fields, 11 C); editable metadata with baseVersion → CONFLICT surfaces both versions |
+| **ShareEditor** | S4 fraction editor: numerator/denominator per beneficiary with a live whole-deed sum meter ("sums to 23/24 — 1/24 unassigned to the remainder rule") | Keyboard grid (P18): ↑/↓ walk beneficiaries, fraction cells reachable standalone; the sum meter is a live region (polite) announcing overflow/underflow states; share values render as fractions with Western numerals; overflow refusal names the excess ("exceeds the deed's whole by 1/8") |
+| **BeneficiaryRegisterTable** | S4 beneficiary rows: bilingual name, class chip, share, eligibility lifecycle (active/suspended/succeeded), successor link, residual-holder mark | Eligibility changes are reason-gated actions (never silent); 'succeeded' rows carry the successor link and never render as deleted (history is permanent); keyboard row menu has visible button equivalents; per-row eligibility chip is glyph+text |
+| **AllocationWorksheet** | S6 the deterministic plan review: totals band (inflows → capped admin → reserve → distributable), per-beneficiary lines with computed amounts and the DERIVATION VISIBLE ("3/24 × 3,504,000 = 438,000" — share × distributable, the 07c regression figure), hold/adjust controls with reason fields | The derivation is a text row per line (SR-readable, never an image or a tooltip-only); held/adjusted lines show computed-vs-adjusted side by side forever; the stale-inputs banner ("2 entries recorded after this plan") is a live region; commit button names the line count ("Record distribution — 9 lines, 1 held"); keyboard: H holds, A adjusts, Enter commits from the review summary |
+| **LedgerBook** | S5 append-only entry browser: seq column, kind glyphs, amounts (tabular numerals), period filters, evidence drawer, reversal append action | Rows sit in the recessed sunken bed (layered-depth); reversal appends a referencing entry — the UI never offers edit or delete on any entry (the grammar is the point); kind is glyph+text; seq is monotonic and announced per row ("entry 214, inflow"); >200 entries virtualize (P19); evidence drawer is keyboard-reachable (E) |
+| **EvidenceDrawer** | bilingual evidence note + abstract document reference + the unbound-storage notice | The note renders at its own direction per side; documentRef renders in bidi isolation (rtl-rules §2); when the storage capability is unbound the drawer states the LOOP-5 posture ("recorded with a note — attach the document when the storage capability is bound"); no secret ever renders here (credential-contract §7) |
+| **TransparencyReportView** | S7 the report document: sections with figures and their arithmetic, ratios strip, variance vs prior, remainder destination, ledger pin, seal state | Renders on the overlay document layer (white, shadow-2); every figure is a ledger walk (entry seq references in the margin); ratios show their division ("administration 10.0% = 432,000 / 4,320,000"); variance pairs with DiffView for the prior-period compare; sealed state renders the SealMark; draft state renders the draft watermark line; both directions verified (the bilingual document renders AR leading, EN side full-citizen) |
+| **SealMark** | the signature component: garnet seal ring with gold ring accent, sealed-at timestamp, ledger-pin line ("pinned to seq 214") | The seal settle is the ONE signature micro-interaction (05): ≤360ms emphasized decelerate, text + timestamp render simultaneously, polite announcement ("Report sealed, pinned to entry 214"); reduced-motion: 2-step opacity + chip + announcement; the mark is a state indicator paired with text, never a brand device (05 brand-distance) |
+
+## Layer-3 token additions
+
+`endowment.card.status.*` (draft/active/dormant/closed chip states), `share.editor.sum-meter.*` (ok/overflow/underflow), `allocation.line.derivation.*` (the per-line arithmetic text row), `allocation.line.held.*` / `allocation.line.adjusted.*`, `ledger.row.kind.*` (inflow/expense/distribution/reversal glyph states), `ledger.bed.*` (sunken-bed surface tokens), `evidence.drawer.unbound.*`, `report.section.figure.*` (tabular-figure bindings), `report.ratio.*` (admin/distribution ratio rows), `seal.mark.*` (settle states, sealed ring, pin line) — all Layer 2 re-binds of the 05 palette; no raw values (token-architecture §1).
+
+## Reused-with-twist
+
+- **DiffView**: report variance compare — structure-level rows (section totals, ratio deltas, remainder changes) between the sealed prior report and the current draft — never character diffs; direction-aware layout (P16).
+- **QuotaMeter**: export/import windows only; the ledger itself is unmetered by design (the degradation floor must not read as rationed — a registry that rations recording is a design failure); warn at 80% per P14.
+- **EmptyState**: S1 first-run sample endowment (interactive: loads the seeded family waqf so the seal moment and worksheet derivation are experienceable pre-registration — CP non-happy path, P22).
+- **JobRow**: determinate row-count progress for imports ("استيراد الصف 9 من 14" class copy); per-format artifact lists for exports with per-format retry.
+
+## Deviations recorded
+
+- Fully-rounded removable filter chips inside density-B system: permitted exception for removable-chip semantics (P08), declared in 05 and here; all other radii in the B family.
+- Icon flip decisions (rtl-rules §2): inflow/expense directional arrows flip in RTL; the reversal counter-clockwise arrow is symmetric and never flips; the seal mark, kind glyphs, and fraction-bar glyph are semantic anchors and never flip; pagination and ledger seq order follow the reading direction (inline-end advance).
+- Numerals per ledger row (05): Western in every data cell; the workspace `ar-indic-in-arabic-prose` policy switches Arabic prose panels only (deed-purpose prose, evidence notes) — components bind both renderings through one token so the choice never changes parsing (rtl-rules §3).
