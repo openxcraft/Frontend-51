@@ -1,0 +1,109 @@
+{
+  "spec_version": "1.0.0",
+  "adapter_contract_version": "v1",
+  "generated_at": "2026-10-16T14:21:34Z",
+  "slug": "podcast-publish-kit",
+  "family": "content_tools",
+  "tier": 3,
+  "flagship": false,
+  "adapter_contract": "PodcastPublishKitAdapterV1",
+  "ai_usage": "conditionally-AI — chapter-suggestion assist degrades to manual chapter marking",
+  "direction_default": "bilingual-ar (proposed, LOOP-6 pending confirmation)",
+  "roster_status": "researched proposal, pending owner confirmation",
+  "shared_foundation": [
+    "token-architecture.md",
+    "ux-patterns.md",
+    "rtl-rules.md",
+    "a11y-baseline.md",
+    "ai-native-patterns.md",
+    "async-contract.md",
+    "credential-contract.md",
+    "design-language-map.md",
+    "motion-language.md",
+    "copy-voice.md"
+  ],
+  "files": [
+    {
+      "path": "00-brief.md",
+      "sha256": "dee72aca4a178397d17cd45d8454b8bd967892876f12cee0bb89a0aa46835daa",
+      "bytes": 6167
+    },
+    {
+      "path": "01-market-research.md",
+      "sha256": "386837415521ca1167b41e795db2a8755e8c944f45fd6b4048752120a809f1a4",
+      "bytes": 9921
+    },
+    {
+      "path": "02-user-research.md",
+      "sha256": "93279f605bff5bc5d8c62a4ba56c6614615c88d8778b8fe8132a8be7b5ed7a1b",
+      "bytes": 6364
+    },
+    {
+      "path": "03-ux-flows.md",
+      "sha256": "124738e9cdff61aa9d1b7ccb8e27ba5f77763fd7d15d8d32428cae449184cc99",
+      "bytes": 13513
+    },
+    {
+      "path": "04-information-arch.md",
+      "sha256": "c865ab1bbcd895b93ea66e194218ac308e4856384943fabc09c88b9c72fba4af",
+      "bytes": 4972
+    },
+    {
+      "path": "05-identity.md",
+      "sha256": "c1e6801b73d0f3178b0ddec2ab69fbf06fb7da70550ce938962471c319165182",
+      "bytes": 8906
+    },
+    {
+      "path": "06-component-needs.md",
+      "sha256": "16599ce59cdf4583985224a401aa729e4feea9afb802af83eefd4edc4dad591b",
+      "bytes": 5694
+    },
+    {
+      "path": "07a-data-contract.md",
+      "sha256": "9770c901dae021a95bf20ea04221f00f4465bec9526c7d33962635b2a9c74d8a",
+      "bytes": 9232
+    },
+    {
+      "path": "07b-adapter-contract.md",
+      "sha256": "ff6d2622369c480593f2355684a0441cb1d4871039b95ac98560ccb45b571dd0",
+      "bytes": 11672
+    },
+    {
+      "path": "07c-mock-adapter.md",
+      "sha256": "d4c4fc7bf23bc6e4f278d9cf4957988550777b0dd3d04fe3567053c912055b36",
+      "bytes": 8345
+    },
+    {
+      "path": "08-integration-map.md",
+      "sha256": "78a20d60abbbba36d6ddc2e3a29725d52a6e8a03733cdafc2a87bc7a8b40f164",
+      "bytes": 5239
+    },
+    {
+      "path": "09-accessibility.md",
+      "sha256": "9fe0c4a8e620590d7c454e93bf69ecd8aad7228992c0fb8ff855c7603ea50d7c",
+      "bytes": 7353
+    },
+    {
+      "path": "10-performance.md",
+      "sha256": "8e91d206ea6ce22170bcc1f08330d06000385313962792f2e7c1f3661ec4a8e0",
+      "bytes": 2898
+    },
+    {
+      "path": "11-empty-loading-error.md",
+      "sha256": "12e03143de61856752047629d008da7aabc320e6d7b44a8b7ab636ce0bc49552",
+      "bytes": 13611
+    },
+    {
+      "path": "12-open-questions.md",
+      "sha256": "6aa27447e2879ebb0f949601b9620d68462c94f9c9ebf72cdf260dc540c8e7a2",
+      "bytes": 4686
+    },
+    {
+      "path": "13-reference-mockups.md",
+      "sha256": "6ce6f04afcc28803ee4da3c590c4f57f7b63d5533f67a9034e4613d7e9d34784",
+      "bytes": 3058
+    }
+  ],
+  "file_count": 16,
+  "manifest_note": "manifest.json is excluded from its own hash list (self-reference); all other files hashed with SHA-256."
+}

@@ -1,0 +1,40 @@
+# 07c — Mock Adapter: podcast-publish-kit
+
+In-memory, deterministic, zero external dependencies, zero network, no timers beyond declared cadences. Implements `PodcastPublishKitAdapterV1` (07b) in full. Seed dataset is NAMED and fixed — every fixture below exists to exercise a declared flow, edge, or degradation path.
+
+## Seed dataset — "ستوديو صوت المدينة" (Sawt Al-Madina Studio)
+
+A bilingual Riyadh production studio with two shows and six episodes across every stage:
+
+**Show A — "مشهد التقنية" (Tech Scene)**: bilingual ar/en interview show, sequential numbering, activeLocales [ar, en], notesTemplate [summary, takeaways, links, guest, chapter-list, cta].
+- **Ep 47 "الذكاء الاصطناعي العملي"** — showcase-complete fixture: transcript (Arabic with isolated Latin runs — product names, model names — 912 segments / 58:14 coverage, srt-format import, 3 flagged `needsReview` segments with typical ASR confusions), 11 chapters (9 `origin:'assist'`, 2 `'manual'`; one chapter intentionally missing its English title — checklist lint fixture), show notes complete both locales with a generated chapter-list block, package v2 (namespace-json + plain-timestamps "both", markdown notes) with one delivered receipt (`receiptRef "ch-8841"`) and one artifact 3 days from expiry. One segment has a recorded edit (`edited: true`, revision 2).
+- **Ep 48 "أسواق العمل الجديدة"** — suggestion fixture: transcript (mixed ar/en, 743 segments / 47:02, timestamped-plain), zero chapters, notes empty → running `suggestChapters` yields **7 deterministic suggestions** from a fixed topic-shift table: boundaries at segments 0, 118, 236, 355, 471, 590, 658; rationales cite the triggering topic phrases (e.g. "تحوّل موضوع عند المقطع 236 — من الرواتب إلى التدريب"); confidences 4 high / 2 medium / 1 low; two suggestions overlap when a manual chapter is created at segment 230 first (overlap-resolution fixture). Quota: 3 runs remaining this window (80%-warn fixture at 1 remaining).
+- **Ep 49 "حوار مع مستثمرة"** — parity fixture: 6 chapters fully titled both locales, notes drafted Arabic-only with `length-far-apart` on the summary (English 11 words vs Arabic 74) and takeaways ar=4/en=0 → parity warnings render; one `shipSingleLocale: ['en']` conscious toggle on the links section (checklist-visible fixture).
+- **Ep 50 "موسم جديد، أسئلة جديدة"** — first-run/validation fixture: draft stage, no transcript. Pasting the provided malformed srt sample (cue overlap at lines 41–44, missing timestamp at line 77) yields VALIDATION with exact line numbers in `details`; the corrected sample imports cleanly.
+- **Ep 51 "أرشيف: دليل المستمع"** — expiry fixture: packaged v1 whose bundle-zip artifact expired 2 days ago → `getArtifact` returns NOT_FOUND with renewal path; `renewArtifact` re-issues with a fresh 7-day window.
+
+**Show B — "حكايات الصباح" (Morning Tales)**: Arabic narrative series, seasons numbering, activeLocales [ar], notesTemplate [summary, chapter-list, cta].
+- **Ep S2E3 "الرحلة الأخيرة"** — untimed fixture: `untimed-plain` transcript (284 segments, no timestamps) → import job enters `awaiting-input`; declaring duration 19:30 (or attaching the local audio reference and marking 5 boundaries by ear) resolves timing; chapters anchor by index with timecodes pending until then. Packaging before timing resolution → checklist blocks (CP-4 edge).
+- **Ep S2E4 "رسائل من الشمال"** (draft) — quick-add fixture.
+
+**Jobs history (pre-seeded)**: one succeeded import (Ep 47), one failed import (malformed srt, VALIDATION at line 41 — retained for retry-scoped re-run), one succeeded suggestion run (Ep 47's), one succeeded package build, one failed delivery (channel refusal, receipt state 'failed', detail "قناة النشر رفضت الاستلام — الحزمة تتضمن فصلاً بلا عنوان" — fixtures the degraded-credential copy). **Activity log**: 18 entries covering runs, mutations, sign-offs, credential events. **Credentials**: one active publication-channel credential (`identifierHint "…k4"`, capabilities ['receive-package'], verified), one expired (`…m2`) → degraded-delivery fixture.
+
+## Behavior (deterministic)
+
+- **importTranscript**: format detection is table-driven and REPORTED in the job result (never silent); pasted text with timestamps parses at a fixed 90ms/100-segments cadence; overlapping cues → VALIDATION with both cue line numbers; `untimed-plain` → job parks in `awaiting-input` until the duration declaration resumes it (typed as the job's input path). Re-import over an episode WITH existing chapters → chapters re-anchor by timecode proximity where a match exists within ±2s; unmatched chapters flagged `untitled`-style lint, never dropped (CP-1 edge).
+- **suggestChapters (simulated assist)**: pure table lookup — NO model, NO randomness; boundaries/titles/rationales come from the fixed topic-shift table above; job paces 120ms/suggestion determinately; mid-run failure injection retains delivered suggestions as `partial` marked partial (ai-native-patterns §2). **Degradation path fixture**: `config.assist = 'unavailable'` → the job fails cleanly with a typed capability-unavailable error carrying the reset estimate, and the UI's degradation copy (11 §E rung 4) renders while manual marking continues to work — the mandated §8 path, provable in one toggle.
+- **Chapters**: create/update validate segment ranges against the transcript (index bounds, end ≥ start, overlap with neighbors → VALIDATION listing the colliding chapter ids); boundary moves re-derive timecodes; `deleteChapter` returns the snapshot for undo; stale baseVersion → CONFLICT with both payloads.
+- **Notes**: save bumps revision; chapter-list sections regenerate from current chapters with `edited-since` when chapters changed post-insertion; parity states computed from fixed length tables (no fuzzy logic).
+- **Checklist**: derived items computed from the same state functions the adapter uses for stage derivation; `setChecklistSignOff` on a derived-blocked item → VALIDATION (sign-offs exist only for human-judgment items).
+- **buildPublicationPackage**: chapters file serialization is REAL and deterministic — the namespace-json artifact contains `version: 1` + `chapters[]` with `startTime`/`startTimeMs`/`title` per the Podcasting 2.0 chapters JSON shape, titles per includeLocales; idempotency keys collapse double-submits; rebuild increments version, prior artifacts persist to their own expiry.
+- **deliverPackage**: active credential → succeeds with receipt `ch-…` refs from a fixed sequence; expired/failed credential → typed error naming the credential + failure date; grant mismatch (capabilities missing 'receive-package') → PERMISSION.
+- **Credentials**: `verifyChannelCredential` performs a simulated real round-trip (two-step state transition unverified→active, 200ms); `saveChannelCredential` returns the credential WITHOUT any secret echo (UI shows the secret once at creation from the input it already holds — the adapter never echoes it back).
+- **Usage**: fixed window (calendar month), suggestion runs decrement; at 1 remaining the UI renders the 80% warning (P14); at 0 → RATE_LIMIT before any work.
+
+## Failure injection
+
+`MockConfig { latencyMs: number; errorRate: 0 | 1; errorCode: ErrorCode; failJobOnce: JobKind | null; assist: 'on' | 'unavailable'; dropAtJobPercent: number | null }`. `errorRate` is 0 or 1 only (determinism — no probabilistic branches); `failJobOnce` fails exactly one job of the kind then auto-clears; `dropAtJobPercent` severs a running job mid-way to exercise partial-result retention (suggestion/import). Fixed correlationIds `ppk-corr-0001`…, allocated sequentially per emitted error.
+
+## Test-support
+
+`reset()` → full seed restoration · `snapshot()` → deep state copy · `replay(events)` → deterministic re-application of a recorded operation log (idempotency-key replay included). No `Math.random`, no `Date.now` (all timestamps are fixed literals from the seed; "now" is an injected clock), no network, no audio bytes anywhere (audio is client-side by contract — 07a).

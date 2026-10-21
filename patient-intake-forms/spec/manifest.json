@@ -1,0 +1,109 @@
+{
+  "spec_version": "1.0.0",
+  "adapter_contract_version": "v1",
+  "generated_at": "2026-10-17T11:52:00Z",
+  "slug": "patient-intake-forms",
+  "family": "specialized",
+  "tier": 2,
+  "flagship": false,
+  "adapter_contract": "PatientIntakeAdapterV1",
+  "ai_usage": "conditionally-AI (Arabic symptom-vocabulary normalization degrades to dictionary lookup)",
+  "direction_default": "bilingual-ar (proposed, LOOP-6 pending confirmation)",
+  "roster_status": "researched proposal, pending owner confirmation",
+  "shared_foundation": [
+    "token-architecture.md",
+    "ux-patterns.md",
+    "rtl-rules.md",
+    "a11y-baseline.md",
+    "ai-native-patterns.md",
+    "async-contract.md",
+    "credential-contract.md",
+    "design-language-map.md",
+    "motion-language.md",
+    "copy-voice.md"
+  ],
+  "files": [
+    {
+      "path": "00-brief.md",
+      "sha256": "9936c28214b2b7e1ed6c8f1e25c20298ef284f902bde7b1477729f8ade732306",
+      "bytes": 9586
+    },
+    {
+      "path": "01-market-research.md",
+      "sha256": "3214b50cfbf5012aad7ac2687d6b424b30b5f6f793efe572529cbd0cffa09956",
+      "bytes": 12009
+    },
+    {
+      "path": "02-user-research.md",
+      "sha256": "3679e8566947f77d8ef48592aad107858dc8079426000a96a088df0d03078cfc",
+      "bytes": 11942
+    },
+    {
+      "path": "03-ux-flows.md",
+      "sha256": "f90991b67bb228299cb2d5d87058cb58a5333b5a8afb5b6c06d44d6eba161c06",
+      "bytes": 22332
+    },
+    {
+      "path": "04-information-arch.md",
+      "sha256": "8a6f2d1068910faefa514c24b09a09f6da92a9813045d80692827f6d7e0484be",
+      "bytes": 6961
+    },
+    {
+      "path": "05-identity.md",
+      "sha256": "5b79720a523652b7ec9d95ebd43a1557eb22dd3690a3df0e5db5cc1ba3122078",
+      "bytes": 21160
+    },
+    {
+      "path": "06-component-needs.md",
+      "sha256": "921e7b9fc777d5c29f8a4a1e67acfbea211a4dd33b2c6b3e3989e5ae8201a500",
+      "bytes": 8588
+    },
+    {
+      "path": "07a-data-contract.md",
+      "sha256": "5c2246aa14589c91947389d5aeb525f62d38ebfe3efb7da9770e12bb492e5097",
+      "bytes": 15369
+    },
+    {
+      "path": "07b-adapter-contract.md",
+      "sha256": "0b1ace0258705f5bd386082a65c90d944c3795628977567960f113d3fca45e46",
+      "bytes": 20663
+    },
+    {
+      "path": "07c-mock-adapter.md",
+      "sha256": "61e31306b6eb6e79ad97f170e52613a115d37a45d02ce0a90103417608e98493",
+      "bytes": 18194
+    },
+    {
+      "path": "08-integration-map.md",
+      "sha256": "c522160cb73d129706975b22108489f2d76415d00daeddee8cb62778abc0eecd",
+      "bytes": 7852
+    },
+    {
+      "path": "09-accessibility.md",
+      "sha256": "edd8e39818c53f2ed94bdd878567c4806fcf3881c8718cc8fbbbaa45bcf15c19",
+      "bytes": 11598
+    },
+    {
+      "path": "10-performance.md",
+      "sha256": "8cc4aa992143e1a7c70636d5d7caad6f64e1eb9a9f61cfd0ce26a7db44c567e5",
+      "bytes": 5773
+    },
+    {
+      "path": "11-empty-loading-error.md",
+      "sha256": "df422dcf10563892bc969fe2ce7a2aa13dd42608a243e062d666865522fa7708",
+      "bytes": 26034
+    },
+    {
+      "path": "12-open-questions.md",
+      "sha256": "fa30644a75606feb2275a37e2120077ceb41f8c31fcd0f786e4d12cf7fb57362",
+      "bytes": 15643
+    },
+    {
+      "path": "13-reference-mockups.md",
+      "sha256": "e153560aa99603524d90169fdc7afdf496b00f6643af0a9a8a5d5422bbd0f880",
+      "bytes": 5904
+    }
+  ],
+  "file_count": 16,
+  "manifest_note": "manifest.json is excluded from its own hash list (self-reference); all other files hashed with SHA-256."
+}

@@ -1,0 +1,12 @@
+{
+ "name": "portfolio-foundation",
+ "private": true,
+ "version": "1.0.0",
+ "type": "module",
+ "description": "Shared foundation + spec-driven generator + verification reports for the 50-product frontend portfolio",
+ "scripts": {
+  "generate": "node tools/generate.mjs",
+  "build-all": "node tools/build-all.mjs",
+  "audit": "node tools/audit.mjs"
+ }
+}

@@ -1,0 +1,352 @@
+[
+ {
+  "slug": "abandoned-cart-recovery",
+  "screens": 11,
+  "ops": 33,
+  "components": 10,
+  "flows": 3
+ },
+ {
+  "slug": "ad-spend-consolidator",
+  "screens": 11,
+  "ops": 28,
+  "components": 10,
+  "flows": 0
+ },
+ {
+  "slug": "arabic-copy-studio",
+  "screens": 14,
+  "ops": 27,
+  "components": 7,
+  "flows": 6
+ },
+ {
+  "slug": "asset-register-tracker",
+  "screens": 10,
+  "ops": 24,
+  "components": 6,
+  "flows": 5
+ },
+ {
+  "slug": "attendance-shift-planner",
+  "screens": 9,
+  "ops": 35,
+  "components": 9,
+  "flows": 2
+ },
+ {
+  "slug": "bilingual-content-calendar",
+  "screens": 10,
+  "ops": 19,
+  "components": 5,
+  "flows": 5
+ },
+ {
+  "slug": "brand-voice-guardian",
+  "screens": 8,
+  "ops": 17,
+  "components": 3,
+  "flows": 4
+ },
+ {
+  "slug": "caption-lab",
+  "screens": 9,
+  "ops": 18,
+  "components": 5,
+  "flows": 5
+ },
+ {
+  "slug": "clinic-appointment-desk",
+  "screens": 11,
+  "ops": 34,
+  "components": 10,
+  "flows": 4
+ },
+ {
+  "slug": "cod-order-confirmation",
+  "screens": 13,
+  "ops": 40,
+  "components": 10,
+  "flows": 1
+ },
+ {
+  "slug": "content-remix-studio",
+  "screens": 8,
+  "ops": 16,
+  "components": 4,
+  "flows": 5
+ },
+ {
+  "slug": "contract-lifecycle-manager",
+  "screens": 9,
+  "ops": 32,
+  "components": 10,
+  "flows": 4
+ },
+ {
+  "slug": "customs-tariff-lookup",
+  "screens": 10,
+  "ops": 28,
+  "components": 10,
+  "flows": 5
+ },
+ {
+  "slug": "expense-claim-flow",
+  "screens": 9,
+  "ops": 30,
+  "components": 9,
+  "flows": 2
+ },
+ {
+  "slug": "field-service-dispatch",
+  "screens": 10,
+  "ops": 34,
+  "components": 9,
+  "flows": 3
+ },
+ {
+  "slug": "funnel-drop-off-explorer",
+  "screens": 11,
+  "ops": 35,
+  "components": 10,
+  "flows": 0
+ },
+ {
+  "slug": "halal-certification-tracker",
+  "screens": 12,
+  "ops": 32,
+  "components": 10,
+  "flows": 2
+ },
+ {
+  "slug": "helpdesk-triage-desk",
+  "screens": 11,
+  "ops": 34,
+  "components": 9,
+  "flows": 0
+ },
+ {
+  "slug": "hiring-pipeline-desk",
+  "screens": 10,
+  "ops": 34,
+  "components": 10,
+  "flows": 2
+ },
+ {
+  "slug": "interactive-story-builder",
+  "screens": 10,
+  "ops": 32,
+  "components": 6,
+  "flows": 5
+ },
+ {
+  "slug": "inventory-count-assistant",
+  "screens": 11,
+  "ops": 30,
+  "components": 9,
+  "flows": 6
+ },
+ {
+  "slug": "invoice-generator-desk",
+  "screens": 9,
+  "ops": 29,
+  "components": 10,
+  "flows": 6
+ },
+ {
+  "slug": "khatt-type-playground",
+  "screens": 8,
+  "ops": 24,
+  "components": 7,
+  "flows": 5
+ },
+ {
+  "slug": "kpi-alert-watch",
+  "screens": 10,
+  "ops": 27,
+  "components": 9,
+  "flows": 5
+ },
+ {
+  "slug": "kyc-onboarding-flow",
+  "screens": 14,
+  "ops": 36,
+  "components": 10,
+  "flows": 0
+ },
+ {
+  "slug": "legal-case-tracker",
+  "screens": 11,
+  "ops": 32,
+  "components": 7,
+  "flows": 1
+ },
+ {
+  "slug": "loyalty-stamp-card",
+  "screens": 11,
+  "ops": 28,
+  "components": 10,
+  "flows": 6
+ },
+ {
+  "slug": "marketplace-listing-sync",
+  "screens": 11,
+  "ops": 33,
+  "components": 9,
+  "flows": 1
+ },
+ {
+  "slug": "media-asset-hub",
+  "screens": 7,
+  "ops": 24,
+  "components": 6,
+  "flows": 6
+ },
+ {
+  "slug": "meeting-notes-action-desk",
+  "screens": 9,
+  "ops": 26,
+  "components": 8,
+  "flows": 4
+ },
+ {
+  "slug": "newsletter-kit",
+  "screens": 6,
+  "ops": 26,
+  "components": 7,
+  "flows": 6
+ },
+ {
+  "slug": "okr-cascade-board",
+  "screens": 10,
+  "ops": 34,
+  "components": 10,
+  "flows": 2
+ },
+ {
+  "slug": "op-ed-desk",
+  "screens": 9,
+  "ops": 20,
+  "components": 5,
+  "flows": 5
+ },
+ {
+  "slug": "patient-intake-forms",
+  "screens": 10,
+  "ops": 29,
+  "components": 9,
+  "flows": 2
+ },
+ {
+  "slug": "podcast-publish-kit",
+  "screens": 9,
+  "ops": 35,
+  "components": 3,
+  "flows": 5
+ },
+ {
+  "slug": "policy-acknowledgment-portal",
+  "screens": 11,
+  "ops": 33,
+  "components": 10,
+  "flows": 2
+ },
+ {
+  "slug": "price-rule-engine",
+  "screens": 10,
+  "ops": 32,
+  "components": 10,
+  "flows": 1
+ },
+ {
+  "slug": "procurement-approval-chain",
+  "screens": 11,
+  "ops": 35,
+  "components": 9,
+  "flows": 3
+ },
+ {
+  "slug": "sales-cohort-view",
+  "screens": 10,
+  "ops": 25,
+  "components": 10,
+  "flows": 5
+ },
+ {
+  "slug": "seasonal-campaign-board",
+  "screens": 9,
+  "ops": 30,
+  "components": 7,
+  "flows": 3
+ },
+ {
+  "slug": "seo-brief-builder",
+  "screens": 9,
+  "ops": 24,
+  "components": 5,
+  "flows": 5
+ },
+ {
+  "slug": "shift-swap-marketplace",
+  "screens": 17,
+  "ops": 37,
+  "components": 9,
+  "flows": 3
+ },
+ {
+  "slug": "shipping-rate-comparator",
+  "screens": 10,
+  "ops": 25,
+  "components": 8,
+  "flows": 5
+ },
+ {
+  "slug": "social-clip-cutter",
+  "screens": 9,
+  "ops": 32,
+  "components": 3,
+  "flows": 2
+ },
+ {
+  "slug": "store-performance-scorecard",
+  "screens": 10,
+  "ops": 31,
+  "components": 10,
+  "flows": 6
+ },
+ {
+  "slug": "survey-insight-miner",
+  "screens": 10,
+  "ops": 30,
+  "components": 10,
+  "flows": 1
+ },
+ {
+  "slug": "translation-review-hub",
+  "screens": 9,
+  "ops": 29,
+  "components": 8,
+  "flows": 1
+ },
+ {
+  "slug": "visitor-badge-checkin",
+  "screens": 10,
+  "ops": 31,
+  "components": 8,
+  "flows": 4
+ },
+ {
+  "slug": "waqf-endowment-registry",
+  "screens": 10,
+  "ops": 33,
+  "components": 9,
+  "flows": 4
+ },
+ {
+  "slug": "zakat-calculation-suite",
+  "screens": 11,
+  "ops": 33,
+  "components": 0,
+  "flows": 4
+ }
+]
