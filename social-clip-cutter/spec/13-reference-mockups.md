@@ -1,0 +1,22 @@
+# 13 — Reference Mockups: social-clip-cutter
+
+Tier 2 obligations: ≥3 curated references (met: 4) + 1 prose original-direction sketch. Real-world names allowed here only (provider-name ban scope: 01/02/13).
+
+## Curated references
+
+1. **Descript — transcript-as-cutting-surface** — https://www.descript.com (review framing: https://academy.techpresso.co/reviews/is-opus-clip-worth-it)
+   Take: the mental model our workbench is built on — the transcript is the primary editing surface, and "cutting" happens by acting on text; the calm density of a doc-like pane beside structure surfaces; keyboard-first editing culture. Not taken: the full-editor scope (we exclude timeline editing — LOOP-10); its pricing shape; clip selection buried as one feature among editing tools (selection is OUR product, not a feature of something else).
+2. **OpusClip — the category anchor we counter-position** — https://www.opus.pro (review set: https://www.ssemble.com/blog/opus-clip-review-2026 · https://bigvu.tv/blog/opus-clips-worth-the-hype)
+   Take: the category's proven promise shape (long video in → captioned vertical clips out) that validates demand for exactly our slice; the credit-meter pricing model as a NEGATIVE reference for meter placement (we meter render minutes, never selection); their auto-caption styling energy (big, bold, safe-zone-aware) as the taste bar for what burned-in captions should look like at a glance. Not taken: black-box moment selection with unexplained virality scores (our candidates carry rationale — the direct inversion); one-click auto-publishing (LOOP-10: we hand off files); the discard-and-credit pain their reviewers document (01).
+3. **Riverside Magic Clips — the suite-bundled counter-case** — https://riverside.com/magic-clips (friction thread: https://www.reddit.com/r/podcasting/comments/1qpitmh/magic_clipssegments_from_riverside_driving_me)
+   Take: proof that clip demand sits INSIDE the podcast production stack (validates the buyer); the "identify highlights" vocabulary, which we make inspectable. Not taken: the media re-upload loop — the exact workaround our local-reference model exists to kill (media never uploads; the transcript is the interface); recording-suite chrome around a clip tool.
+4. **Klap — vertical-first clip presentation** — https://klap.app (behavior details via comparison: https://eklipse.gg/compare/vidyo-ai-alternatives)
+   Take: the vertical-first presentation instinct — clips are previewed IN their 9:16 frame from the first glance, not as landscape shrunk into a corner; the face-tracking auto-reframe problem statement (which our operator-controlled aspect-ratio choices acknowledge without pretending to solve). Not taken: quantity posture (~5 clips per minute of footage — our buyer posts 3, not 30); unexplained virality scoring; 52-languages counting Arabic as a checkbox rather than a typographic discipline.
+
+## Original direction (prose sketch — identity-driven, Tier 2)
+
+A cutting desk under neon violet: paper-white transcript column breathing at comfortable density, one amber boundary handle glowing at each end of a violet selection wash, and a dark stage sunk into the right of the bench where the clip lives — the deepest layer of a layered-depth stack, media-dark inside a light studio. The highlight shelf slides in as a third layer below the transcript, each candidate card carrying its reasoning in plain bilingual words: density, pauses, a question opener — numbers the operator can check against the text itself. When a clip is accepted, its card settles into the rail with a single confident pop, once, and the rail's state chips do the quiet accounting from there. The burn-in studio flips the stage's caption block between right-to-left and left-to-right with one radio: the same spec, two directions, a Latin brand name holding its order inside the Arabic line in both. The safe-zone frame is drawn ON the stage like tape marks on a monitor — the operator sees exactly where the platform's buttons will land. At the foot of the bench, the export bar counts render minutes honestly and keeps the recipe path at the same height as the render button: caption files, timecodes, a spec sheet — the desk always works, plugged in or not.
+
+## Mood anchors
+
+Neon violet over paper · one amber playhead · the transcript is ground truth, work objects stack above it · the stage is the darkest layer · rationale before automation · one pop when the clip is cut — then back to work.

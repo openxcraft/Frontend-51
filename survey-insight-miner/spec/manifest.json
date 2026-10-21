@@ -1,0 +1,109 @@
+{
+  "spec_version": "1.0.0",
+  "adapter_contract_version": "v1",
+  "generated_at": "2026-10-17T17:00:20Z",
+  "slug": "survey-insight-miner",
+  "family": "analytics",
+  "tier": 2,
+  "flagship": false,
+  "adapter_contract": "SurveyInsightAdapterV1",
+  "ai_usage": "conditionally-AI (Arabic response clustering degrades to keyword-frequency grouping)",
+  "direction_default": "bilingual-ar (proposed, LOOP-6 pending confirmation)",
+  "roster_status": "researched proposal, pending owner confirmation",
+  "shared_foundation": [
+    "token-architecture.md",
+    "ux-patterns.md",
+    "rtl-rules.md",
+    "a11y-baseline.md",
+    "ai-native-patterns.md",
+    "async-contract.md",
+    "credential-contract.md",
+    "design-language-map.md",
+    "motion-language.md",
+    "copy-voice.md"
+  ],
+  "files": [
+    {
+      "path": "00-brief.md",
+      "sha256": "fa85df93a25babb18a0ea065efbbb93810e725b504580e12121dcc2af2f54808",
+      "bytes": 12587
+    },
+    {
+      "path": "01-market-research.md",
+      "sha256": "fd0013d0ef2f714b8404e62fdf69de55a0ffe1522e53f5e3c9cd418c8ad524af",
+      "bytes": 15889
+    },
+    {
+      "path": "02-user-research.md",
+      "sha256": "e466a041496c4435ac6e3b407c747b284d51553e11e267910fffc1080a7f88f3",
+      "bytes": 10099
+    },
+    {
+      "path": "03-ux-flows.md",
+      "sha256": "ea065097c36c89e6debb1bd187bff8d0dc32902f28aa8431903d482e6739e124",
+      "bytes": 18645
+    },
+    {
+      "path": "04-information-arch.md",
+      "sha256": "73685257894d7239fca4609b9b99f4cd51e9f82dba4d7fe31a7051b4c0a449dd",
+      "bytes": 5861
+    },
+    {
+      "path": "05-identity.md",
+      "sha256": "0f13e603231644b935bdc7d2b5531fb0e6ebf4767582122744eacb7b561dd1ab",
+      "bytes": 23884
+    },
+    {
+      "path": "06-component-needs.md",
+      "sha256": "1a9fe8316ddbdf5bc1fc19b37729e0887e26f3dad10531d301eaf8c76969f929",
+      "bytes": 10284
+    },
+    {
+      "path": "07a-data-contract.md",
+      "sha256": "e066a42f8c4b73468ed1e57219e4864899c5eefc5fda36c9bd57bc0ea2e2e685",
+      "bytes": 13181
+    },
+    {
+      "path": "07b-adapter-contract.md",
+      "sha256": "dca82b59a97fc0364aa126231458c777ebcca20bff86227da0cc3ccc400d71a7",
+      "bytes": 19576
+    },
+    {
+      "path": "07c-mock-adapter.md",
+      "sha256": "2f539532636c1f470dab704d7827e41a149e333103e4f6307e0d5ff6a461b968",
+      "bytes": 21399
+    },
+    {
+      "path": "08-integration-map.md",
+      "sha256": "f7dae0bb46a80bd643e49a80536048decfff4871821ad22f2034d18089f3ba8e",
+      "bytes": 7191
+    },
+    {
+      "path": "09-accessibility.md",
+      "sha256": "cd1da078566c004d42b15814635b287ecd67bf5d69522d21958fff6f3f298c04",
+      "bytes": 10173
+    },
+    {
+      "path": "10-performance.md",
+      "sha256": "6bfd26d405a6adaf9450433d31f798f1b4cebd5f9ca362d16e4f0ec7bd579a09",
+      "bytes": 5139
+    },
+    {
+      "path": "11-empty-loading-error.md",
+      "sha256": "01f5a225432105747a709fa855d9fffdea23e8cd85f22d62f663b39dfc033682",
+      "bytes": 23448
+    },
+    {
+      "path": "12-open-questions.md",
+      "sha256": "cc22716ebdc58288b8a08372c9672e5284166cea51e69e398fa4542809801601",
+      "bytes": 30426
+    },
+    {
+      "path": "13-reference-mockups.md",
+      "sha256": "07f163d4eb262bd8d4972ba5f45ba2b74472de065c8b838453cac985f1f7d98b",
+      "bytes": 9163
+    }
+  ],
+  "file_count": 16,
+  "manifest_note": "manifest.json is excluded from its own hash list (self-reference); all other files hashed with SHA-256."
+}

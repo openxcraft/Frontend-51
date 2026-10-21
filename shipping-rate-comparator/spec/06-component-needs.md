@@ -1,0 +1,34 @@
+# 06 — Component Needs: shipping-rate-comparator
+
+## Shared primitives consumed
+
+Button, Menu, Dialog, Tabs (card-editor tabs, workspace tabs), Tooltip, Toast, Skeleton, EmptyState, FilterChips (P08 — status/channel filters with removable chips), JobRow, DiffView (card before/after version compare), QuotaMeter (export window, P14), ActionBar (bulk profile ops, P07), CommandPalette (P05), AutosaveIndicator (card editor, P10), ActivityFeed (P17).
+
+## Invented components (8)
+
+| Component | Purpose | Obligations |
+|---|---|---|
+| **RateCardGrid** | the zone × weight-break price matrix editor: one row per zone, one column per break, inline-editable price cells with contiguity enforcement | P18 grid semantics (arrow navigation, range selection); inline edit per P06 (Esc restores, Tab commits + advances); ladder-contiguity violations blocked inline with the neighbor cell named; money renders Western numerals, inline-end aligned, fixed decimals per currency; cells ≥24×24 targets (2.5.8); grid state announced on region entry (row/col counts); 360px → horizontal scroll then stacked per-zone cards (ux-guidelines Table Handling) |
+| **ZoneCoverageEditor** | per-zone destination coverage: removable chips, add-field with live probe ("does this destination resolve?") | Coverage chips bidi-isolated (`dir="auto"` on the add-field — rtl-rules §2); probe result is text ("الاحساء → Zone 2 — matched الأحساء via normalization"), never color-only; overlapping-coverage conflicts blocked at save with both zones named; probe is keyboard-reachable and SR-readable; zone.remote flag is a labeled checkbox, not a color state |
+| **DimWeightCalculator** | the live three-figure settle: actual / volumetric / chargeable + the derivation line + divisor meaning | Keystroke-to-settle ≤16ms (10-performance); the winning figure carries amber-deep underline + derivation text (the Settle signature — 05 motion); all three figures always visible as text with units; rounding step and divisor shown as copy ("÷ 5000 · step 0.5 kg"); figures never animate value (crossfade only); reduced-motion → instant swap + polite announcement |
+| **ComparisonTable** | results side-by-side: card row per quote — total, currency badge, delta chip vs cheapest, derivation summary, state cells (no-coverage / out-of-range / retired) | Sorted ascending within currency group; groups are labeled table sections (SR announces group headers); best-rate row = amber wash + green total + "cheapest" text badge (icon+text+color, never color alone); delta chips sign+number+arrow-icon; state cells carry icon + text + fix action (link to the card's zones); every total is text (never heat-only); >200 rows virtualize (P19) with focus preservation |
+| **QuoteBreakdownSheet** | the full derivation chain for one quote: weights (which won), zone + matched coverage entry, break + base, overage math, surcharge lines each with its rule, pinned card version | Opens as a side sheet (focus trap + return to trigger); each line states rule-then-amount ("fuel 12.5% of base 15.00 = 1.88"); the chain is one ordered list semantically (SR reads it as arithmetic); card-version pin rendered as a chip; exportable content mirrors the sheet exactly (the artifact IS this sheet, typeset) |
+| **SurchargeStackEditor** | typed surcharge definitions: fuel-percentage, COD (rate or flat), remote-area flat, declared-value rate, handling flat — each row its own rule in copy | Type selection is a radio-group with visible labels; each rule's copy updates live from its fields; percentages render bps-exact ("12.5%", never "0.125"); rule copy is bilingual and SR-read; delete is P03 undo-window (7s); rows reorder by keyboard (⌘↑/⌘↓, 2.5.7) |
+| **ImportTableMapper** | paste-import surface: paste field, header form (channel/service/currency/unit system/divisor), live parsed preview grid, named-issue list | Parse preview is determinate and instant (client-side preview; the Job formalizes it); issues name row + reason + suggested fix; "kept rows" count always visible (partial policy visible); normalization applied visibly (chip per normalized name — "متاجر جاهزه → متاجر جاهزة" class disclosure); re-import idempotency stated in copy; job progress per async-contract §3 (row counts, never percentages) |
+| **BatchDestinationsPaste** | batch mode entry: paste field (one destination per line), per-row normalization preview, duplicate accounting, card selector chips, run button | Per-row `dir="auto"` isolation (mixed-script pastes — rtl-rules §2); duplicate rows counted with a badge, deduplicated in the matrix; empty/whitespace rows named as issues, never silently dropped; the run is a Job with destination-count progress ("resolving 12 of 30"); exception rows float with fix actions; matrix cells numeric (charts contract) |
+
+## Layer-3 token additions
+
+`ratecard.grid.cell.*` (inline-edit states: resting/focus/editing/error — amber-deep focus ring, red error border UI-ink), `zone.chip.coverage.*` (removable chip states per P08), `zone.probe.result.*` (matched/no-coverage/retired states), `calculator.figure.{actual|volumetric|chargeable}.*` (the three-figure roles + winner mark), `quote.row.best.*` / `quote.row.state.*` (best-rate wash, no-coverage, out-of-range, retired), `quote.breakdown.rule.*` (the derivation-rule line treatment), `surcharge.row.type.*` (per-kind rule-chip states), `import.issue.row.*` (issue severity states), `batch.matrix.cell.*` (numeric cell + exception states) — all Layer 2 re-binds of the 05 palette; no raw values anywhere (token-architecture §1).
+
+## Reused-with-twist
+
+- **DiffView**: card version-to-version compare (structure-level: zone coverage deltas, break price deltas, surcharge stack deltas — not character diffs); renders both directions natively (P16 direction-aware).
+- **QuotaMeter**: export window only; comparisons, calculator runs, and card edits deliberately render NO meter (deterministic arithmetic is unmetered by design — the value floor must not read as rationed; 12 Q-3).
+- **EmptyState**: S1 first-run sample card + sample profile (interactive: loads the seeded fixtures so the Settle and the cheapest-flip are experienceable pre-import — CP non-happy path, P22).
+
+## Deviations recorded
+
+- Fully-rounded filter/card-selector chips inside density-B system: permitted exception for removable-chip semantics (P08), declared in 05; all other radii in the B family (6–10px).
+- Icon flip decisions (rtl-rules §2): tray-with-out-arrow (export) and drill chevrons flip in RTL; the beam-scale, isometric cube, ruler-with-slash, concentric arcs, and map-pin glyphs never flip (semantically anchored); pagination advances toward inline-end in RTL.
+- The money-figure alignment rule (fixed decimals + inline-end alignment) is a component-level obligation, not a font feature assumption — recorded in 05 typography and enforced here per cell.
